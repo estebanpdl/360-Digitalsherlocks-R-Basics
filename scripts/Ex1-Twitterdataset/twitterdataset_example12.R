@@ -32,3 +32,4 @@ data$Date.posted.hour <- format(
     data$Date.posted.fixed
   ), format = "%H:%M:%S"
 )
+

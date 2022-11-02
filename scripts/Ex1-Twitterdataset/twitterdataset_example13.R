@@ -1,22 +1,22 @@
 # === Get difference in seconds between posts ===
 
 # Difference in seconds
-data$diff.secs <- c(0, difftime(
-    data$Date.posted.fixed[-1],
-    data$Date.posted.fixed[-nrow(data)],
+approach4$diff.secs <- c(0, difftime(
+    approach4$Date.posted.fixed[-1],
+    approach4$Date.posted.fixed[-nrow(approach4)],
     units = 'secs'
   )
 )
 
 # Explore average
-mean(data$diff.secs)
+mean(approach4$diff.secs)
 
 # Plot data
-hist(subset$secs)
+hist(approach4$diff.secs)
 
 # Fix gaps by filtering data
-secs_dataset <- data %>%
-  filter(diff.secs <= mean(data$diff.secs))
+secs_dataset <- approach4 %>%
+  filter(diff.secs <= mean(approach4$diff.secs))
 
 # Size
 nrow(secs_dataset)
