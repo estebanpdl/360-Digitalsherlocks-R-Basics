@@ -1,15 +1,15 @@
 # === Getting data from Twitter ===
 
 # Install and Import Rtweet library
-install.packages("rtweet")
+# install.packages("rtweet")
 library(rtweet)
 
 # Get tweets by keyword/hashtag
-tweets <- search_tweets("#Sandinista", n = 10000, include_rts = FALSE)
+tweets <- search_tweets("tentativa de golpe", n = 1000, include_rts = FALSE)
 
-# Get users -> It takes more tweets basically. It seems keywords and hashtags with
-# special characters are not supported.
-usrs <- search_users("#Sandinista", n = 1000)
+# Get users -> Search for Twitter users. The Twitter API limits the results to at most 1,000 users.
+# As string providing the search query. Try searching by interest, full name, company name, or location. Exact match searches are not supported.
+usrs <- search_users("bolsonarista", n = 100)
 
 # Get friends -> accounts followed by one specific account
 following <- get_friends("Bartek93794875")

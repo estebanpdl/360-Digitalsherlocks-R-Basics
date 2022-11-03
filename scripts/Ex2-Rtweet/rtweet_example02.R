@@ -1,7 +1,7 @@
 # === Extract domain name from URL ===
 
 # Install and import urltools package
-install.packages('urltools')
+# install.packages('urltools')
 library(urltools)
 
 # Process dataset after exploring columns in dataset
@@ -12,3 +12,5 @@ domains_set <- suffix_extract(domain(urls_set))
 
 # Get columns
 names(domains_set)
+
+tweets$entities

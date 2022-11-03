@@ -1,4 +1,5 @@
 # import modules
+# install.packages("xlsx")
 library(xlsx)
 
 # read domains sample
@@ -125,10 +126,12 @@ for (i in 1:NROW(urls)) {
 # Create dataset
 dataset <- tidytable::bind_rows.(url_datalist)
 
-# save dataset
+# save dataset XLSX format
 xlsx_file <- './data/crowdtangle_output.xlsx'
 dataset <- apply(dataset, 2, as.character)
 write.xlsx(dataset, file = xlsx_file)
 
 # write dataset in CSV
-# write.csv(dataset, file = csv_file, fileEncoding = "UTF-8")
+csv_file <- './data/crowdtangle_output.csv'
+write.csv(dataset, file = csv_file, fileEncoding = "UTF-8")
+

@@ -1,5 +1,5 @@
 # Install and Import Rvest library
-install.packages("rvest")
+# install.packages("rvest")
 library(rvest)
 
 # Read URL
